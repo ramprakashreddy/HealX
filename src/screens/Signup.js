@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import font from './font';
  
 export default Signup = () => {
     return (
         <View style={styles.container1}>
-            <View style={{ flexDirection: "column", marginTop: 55, marginLeft: 16 }}>
+            <View style={{ flexDirection: "column", marginTop: 20, marginLeft: 16 }}>
                 <Text style={{ fontFamily: 'OpenSans-Bold', color: "#4c859b", fontSize: 30 }}>Hello,</Text>
                 <Text style={styles.text}>Welcome to HealX</Text>
             </View>
-            <View style={{ flexDirection: "column", marginTop: 30, marginLeft: 20 }}>
+            <View style={{ flexDirection: "column", marginTop: 10, marginLeft: 20 }}>
                 <Text style={styles.inputFieldHeading}>Name</Text>
                 <TextInput style={styles.inputField} />
                 <Text style={styles.inputFieldHeading}>Phone No.</Text>
@@ -37,7 +38,7 @@ export default Signup = () => {
 const styles = StyleSheet.create({
     container1: {
         flex: 1,
-        backgroundColor: "#ffffff"
+        backgroundColor: "#ffffff",
     },
     text: {
         fontFamily: 'OpenSans-Bold',
@@ -46,20 +47,20 @@ const styles = StyleSheet.create({
         textAlign: "left"
     },
     inputField: {
-        padding: 15,
-        width: 350,
-        fontSize: 16,
+        marginLeft: 27,
+        width: 308,
+        fontSize: 18,
         color: '#4c859b',
         fontFamily: 'OpenSans',
-        height: 50,
+        height: 42,
         borderRadius: 30,
         backgroundColor: "#f6f7f9"
     },
     inputFieldHeading: {
         fontFamily: 'OpenSans-Regular',
         color: "#385882",
-        fontSize: 22,
-        marginLeft: 10,
+        fontSize: 18,
+        marginLeft: 27,
         marginBottom: 10,
         marginTop: 10
  
@@ -67,8 +68,8 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: "#b0bbe3",
         width: 250,
-        height: 50,
-        marginTop: 50,
+        height: 40,
+        marginTop: 20,
         borderRadius: 40,
         alignSelf: "center"
     }
