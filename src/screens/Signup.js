@@ -50,7 +50,7 @@ export default class Signup extends Component {
     .createUserWithEmailAndPassword(this.state.username, this.state.password)
     .then(() => {
       console.log('User account created & signed in!');
-      this.props.navigation.navigate('Signin')
+      this.props.navigation.navigate('Login')
     })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {
