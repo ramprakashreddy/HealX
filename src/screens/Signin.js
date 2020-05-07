@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, View, Text, TouchableOpacity,Image } from 'react-native';
 import signup from './Signup'
 
 
  
-export default Sign = ({navigation}) => {
+export default class App extends Component {
+   render(){
     return(
         <View style={styles.container}>
         <Text style={styles.healX}>HealX</Text>
@@ -14,7 +15,7 @@ export default Sign = ({navigation}) => {
           <Text style={styles.signtext}>Sign in</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>
-            navigation.navigate('Signup')
+            this.props.navigation.navigate('Signup')
         }
         style={styles.touch2}>
           <Text style={styles.signuptext}>Sign up</Text>
@@ -23,7 +24,7 @@ export default Sign = ({navigation}) => {
           <Text style={styles.areYouAPharmacistClickHere}>Are you a pharmacist? Click here.</Text>
         </TouchableOpacity>
       </View>
-    )
+    )}
 }
 
 const styles = StyleSheet.create({
