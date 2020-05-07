@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity,ScrollView } from 'react-native';
 import font from './font';
 import auth from '@react-native-firebase/auth';
 
@@ -72,7 +72,7 @@ export default class Signup extends Component {
        
       
     return (
-        <View style={styles.container1}>
+        <ScrollView style={styles.container1}>
             <View style={{ flexDirection: "column", marginTop: 20, marginLeft: 16 }}>
                 <Text style={{ fontFamily: 'OpenSans-Bold', color: "#4c859b", fontSize: 30 }}>Hello,</Text>
                 <Text style={styles.text}>Welcome to HealX</Text>
@@ -83,16 +83,18 @@ export default class Signup extends Component {
                 <Text style={styles.inputFieldHeading}>Phone No.</Text>
                 <TextInput style={styles.inputField} />
                 <Text style={styles.inputFieldHeading}>E-mail</Text>
-                <TextInput 
+                <TextInput autoCapitalize='none'
                  defaultValue={this.state.username}
                  onChangeText={this.handleChangeText1}
                 style={styles.inputField} />
                 <Text style={styles.inputFieldHeading}>Create Password</Text>
                 <TextInput style={styles.inputField} 
+                autoCapitalize='none' secureTextEntry
                  defaultValue={this.state.password}
                  onChangeText={this.handleChangeText2}/>
                 <Text style={styles.inputFieldHeading}>Confirm Password</Text>
                 <TextInput style={styles.inputField} 
+                autoCapitalize='none' secureTextEntry
                 defaultValue={this.state.confpassword}
                 onChangeText={this.handleChangeText3}/>
  
@@ -104,7 +106,7 @@ export default class Signup extends Component {
                     Sign Up
         </Text>
             </TouchableOpacity>
-        </View>
+        </ScrollView>
  
     )}
 }
