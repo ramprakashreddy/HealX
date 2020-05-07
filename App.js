@@ -5,6 +5,7 @@ import Signin from './src/screens/Signin';
 import { View } from 'react-native';
 import Signup from './src/screens/Signup';
 import login from './src/screens/login';
+import Forgotpassword from './src/screens/Forgotpassword';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -22,10 +23,11 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Sigin'>
+        <Stack.Navigator initialRouteName='Signin'>
           <Stack.Screen name='Signin' component={Signin} />
           <Stack.Screen name='Signup' component={Signup} />
           <Stack.Screen name='Login' component={login} />
+          <Stack.Screen name='Forgotpassword' component={Forgotpassword} />
         </Stack.Navigator>
       </NavigationContainer>
     )

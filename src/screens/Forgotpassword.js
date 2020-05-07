@@ -14,31 +14,26 @@ export default class login extends Component {
         return (
             <View style={styles.container1}>
                 <View style={{ flexDirection: "column", marginTop: 40, marginLeft: 16 }}>
-                    <Text style={{ fontFamily: 'OpenSans-Bold', color: "#4c859b", fontSize: 30 }}>Hello,</Text>
-                    <Text style={styles.text}>Welcome back</Text>
+                    <Text style={{ fontFamily: 'OpenSans-Bold', color: "#4c859b", fontSize: 30 }}>Reset Password</Text>
+                    <Text style={{ fontFamily: 'OpenSans-Regular', color: "#8589c3", fontSize: 22, marginTop: 50 }}>
+                        Enter your e-mail and we'll send you
+            </Text>
+                    <Text style={{ fontFamily: 'OpenSans-Regular', color: "#8589c3", fontSize: 22, marginTop: 0, alignSelf: 'center' }}>
+                        a link to reset your password
+            </Text>
+
                 </View>
-                <View style={{ flexDirection: "column", marginTop: 100, marginLeft: 20 }}>
+                <View style={{ flexDirection: "column", marginTop: 50, marginLeft: 20 }}>
                     <Text style={styles.inputFieldHeading}>E-mail</Text>
                     <TextInput style={styles.inputField} />
-                    <Text style={styles.inputFieldHeading}>Create Password</Text>
-                    <TextInput
-                        secureTextEntry={this.state.showPassword}
-                        onChangeText={(password) => this.setState({ password })}
-                        style={styles.inputField} />
 
                 </View>
                 <TouchableOpacity style={styles.button}>
                     <Text style={{ textAlign: "center", marginTop: 5, fontFamily: "Poppins-Regular", fontSize: 22, color: "#f5faff" }}>
-                        Sign in
+                        Reset
                      </Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() =>
-                    this.props.navigation.navigate('Forgotpassword')}
-                >
-                    <Text style={{ textAlign: "center", color: "#385882", marginTop: 20, fontFamily: "Poppins-Regular", fontSize: 22 }}>
-                        Forgot Password?
-                 </Text>
-                </TouchableOpacity>
+
             </View>
 
         )
@@ -80,7 +75,7 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: "#b0bbe3",
         width: 250,
-        height: 40,
+        height: 45,
         marginTop: 40,
         borderRadius: 40,
         alignSelf: "center"
