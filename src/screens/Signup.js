@@ -79,7 +79,8 @@ export default class Signup extends Component {
             </View>
             <View style={{ flexDirection: "column", marginTop: 10, marginLeft: 20 }}>
                 <Text style={styles.inputFieldHeading}>Name</Text>
-                <TextInput style={styles.inputField} />
+                <TextInput style={styles.inputField} 
+                autoCapitalize='words'/>
                 <Text style={styles.inputFieldHeading}>Phone No.</Text>
                 <TextInput style={styles.inputField} />
                 <Text style={styles.inputFieldHeading}>E-mail</Text>
@@ -126,6 +127,7 @@ const styles = StyleSheet.create({
     },
     inputField: {
         marginLeft: 27,
+        paddingLeft:10,
         width: 308,
         fontSize: 18,
         color: '#4c859b',
