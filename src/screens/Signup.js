@@ -40,9 +40,9 @@ export default class Signup extends Component {
 
     
     signup(){
-        if(this.state.username==='')
+        if((this.state.username==='')||(this.state.password==='')||(this.state.confpassword===''))
         {
-            alert('enter email')
+            alert('enter the details')
         }
         else{
         if(this.state.confpassword===this.state.password){
