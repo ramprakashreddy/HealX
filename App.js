@@ -25,7 +25,7 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='first'>
+        <Stack.Navigator initialRouteName='Signin'>
           <Stack.Screen name='Signin' component={Signin} />
           <Stack.Screen name='Signup' component={Signup} />
           <Stack.Screen name='Login' component={login} />
