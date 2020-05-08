@@ -7,6 +7,7 @@ import Signup from './src/screens/Signup';
 import login from './src/screens/login';
 import first from './src/screens/first'
 import Forgotpassword from './src/screens/Forgotpassword';
+import chatBot from './src/screens/chatBot';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -24,12 +25,13 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Signin'>
+        <Stack.Navigator initialRouteName='first'>
           <Stack.Screen name='Signin' component={Signin} />
           <Stack.Screen name='Signup' component={Signup} />
           <Stack.Screen name='Login' component={login} />
           <Stack.Screen name='Forgotpassword' component={Forgotpassword} />
-          <Stack.Screen name='first' component={first}/>
+          <Stack.Screen name='first' component={first} />
+          <Stack.Screen name='chatBot' component={chatBot} />
         </Stack.Navigator>
       </NavigationContainer>
     )

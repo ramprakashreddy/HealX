@@ -1,12 +1,36 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 
 export default class first extends Component {
     render() {
-      return (
-          <View style={{flex: 1, justifyContent:'center'}}>
-              <Text>hihfidhfidfd</Text>
-          </View>
-      )
-    }}
+        return (
+            <View style={{ flex: 1, justifyContent: 'center' }}>
+                <TouchableOpacity onPress={() =>
+                    this.props.navigation.navigate('chatBot')}
+                    style={styles.button}
+                >
+                    <Text style={{ textAlign: "center", marginTop: 5, fontFamily: "Poppins-Regular", fontSize: 22, color: "#f5faff" }}>
+                        CHAT BOT
+                     </Text>
+                </TouchableOpacity>
+            </View>
+        )
+    }
+}
+
+
+const styles = StyleSheet.create({
+    container1: {
+        flex: 1,
+        backgroundColor: "#ffffff",
+    },
+    button: {
+        backgroundColor: "#b0bbe3",
+        width: 250,
+        height: 40,
+        marginTop: 40,
+        borderRadius: 40,
+        alignSelf: "center"
+    }
+});
