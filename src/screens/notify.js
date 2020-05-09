@@ -38,8 +38,6 @@ export default class notify extends Component {
             repeatType: 'time',
             repeatTime: (10*1000)
           });
-        
-       PushNotification.cancelAllLocalNotifications()
     }
 
 
