@@ -31,13 +31,15 @@ export default class notify extends Component {
     }
 
     notifynow(){
-        PushNotification.localNotification({
-            title: "My Notification Title", // (optional)
-            message: "My Notification Message",
-           // repeatType: 'time',
-            //repeatTime: 60*1000,
-        })
-
+        PushNotification.localNotificationSchedule({
+            //... You can use all the options from localNotifications
+            message: "My Notification Message", // (required)
+            date: new Date(Date.now() + 10 * 1000),
+            repeatType: 'time',
+            repeatTime: (10*1000)
+          });
+        
+       PushNotification.cancelAllLocalNotifications()
     }
 
 
