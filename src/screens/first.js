@@ -5,7 +5,7 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 export default class first extends Component {
     render() {
         return (
-            <View style={{ flex: 1, justifyContent: 'center' }}>
+            <View style={styles.container1}>
                 <TouchableOpacity onPress={() =>
                     this.props.navigation.navigate('chatBot')}
                     style={styles.button}
@@ -14,6 +14,7 @@ export default class first extends Component {
                         CHAT BOT
                      </Text>
                 </TouchableOpacity>
+
             </View>
         )
     }
@@ -29,8 +30,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#b0bbe3",
         width: 250,
         height: 40,
-        marginTop: 40,
+        marginTop: 325,
         borderRadius: 40,
         alignSelf: "center"
-    }
+    },
+
 });
