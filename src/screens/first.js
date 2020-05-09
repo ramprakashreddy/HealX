@@ -79,11 +79,12 @@ const styles = StyleSheet.create({
     container1: {
         flex: 1,
         backgroundColor: "#ffffff",
-    },
+        alignItems: 'center',
+         },
     card: {
         backgroundColor: "#ffffff",
         width: 180,
-        height: 280,
+        height: 300,
         marginLeft: 10,
         marginTop: 25,
         elevation: 15
