@@ -25,12 +25,12 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Signin'>
+        <Stack.Navigator initialRouteName='first'>
           <Stack.Screen name='Signin' component={Signin} />
           <Stack.Screen name='Signup' component={Signup} />
           <Stack.Screen name='Login' component={login} />
           <Stack.Screen name='Forgotpassword' component={Forgotpassword} />
-          <Stack.Screen name='first' component={first} />
+          <Stack.Screen options={{ headerShown: false }} name='first' component={first} />
           <Stack.Screen name='chatBot' component={chatBot} />
         </Stack.Navigator>
       </NavigationContainer>
