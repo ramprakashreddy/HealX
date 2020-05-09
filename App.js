@@ -6,6 +6,7 @@ import { View } from 'react-native';
 import Signup from './src/screens/Signup';
 import login from './src/screens/login';
 import first from './src/screens/first'
+import notify from './src/screens/notify';
 import Forgotpassword from './src/screens/Forgotpassword';
 import chatBot from './src/screens/chatBot';
 import { NavigationContainer } from '@react-navigation/native';
@@ -25,7 +26,8 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Signin'>
+        <Stack.Navigator initialRouteName='first'>
+          <Stack.Screen name='notify' component={notify}/>
           <Stack.Screen name='Signin' component={Signin} />
           <Stack.Screen name='Signup' component={Signup} />
           <Stack.Screen name='Login' component={login} />

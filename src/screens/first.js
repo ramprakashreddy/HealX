@@ -33,7 +33,8 @@ export default class first extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity style={styles.card}>
+                    <TouchableOpacity style={styles.card}
+                    onPress={()=>this.props.navigation.navigate('notify')}>
                         <Text style={{ fontSize: 18, color: '#8589c3', fontFamily: 'OpenSans-SemiBold', textAlign: 'center', marginTop: 5 }}>Timetable</Text>
                         <Image
                             style={styles.imagestyletimetable}
