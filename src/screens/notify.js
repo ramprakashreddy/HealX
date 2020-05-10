@@ -31,13 +31,16 @@ export default class notify extends Component {
     }
 
     notifynow(){
+     // var date1 = Date.UTC(2020,04,10,17,50);
         PushNotification.localNotificationSchedule({
             //... You can use all the options from localNotifications
             message: "My Notification Message", // (required)
-            date: new Date(Date.now() + 10 * 1000),
+            date:  new Date(Date.UTC(2020,4,10,12,41)),
             repeatType: 'time',
             repeatTime: (10*1000)
           });
+          console.log(Date.UTC(2020,4));
+        // PushNotification.cancelAllLocalNotifications()
     }
 
 
