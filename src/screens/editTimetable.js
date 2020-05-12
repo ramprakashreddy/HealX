@@ -144,43 +144,39 @@ const Tasks = ({ navigation }) => {
         setMinute('');
 
     };
-    /*   const notifynow = () => {
-  
-  
-  
-          PushNotification.localNotificationSchedule({
-              //... You can use all the options from localNotifications
-              message: name + "take this medicine", // (required)
-              date: new Date(Date.UTC(year, month - 1, date, hour, minute) - 19800000),
-              repeatType: "day",
-              //repeatTime: (10 * 1000)
-  
-          });
-          console.log(data);
-          console.log(Date.UTC(year, month - 1, date, hour, minute));
-          PushNotification.configure({
-              // (optional) Called when Token is generated (iOS and Android)
-              onRegister: function (token) {
-                  console.log("TOKEN:", token);
-              },
-              onNotification: function (notification) {
-                  console.log("NOTIFICATION:", notification);
-                  // notification.finish(PushNotificationIOS.FetchResult.NoData);
-              },
-              permissions: {
-                  alert: true,
-                  badge: true,
-                  sound: true,
-              },
-              popInitialNotification: true,
-              requestPermissions: true,
-          });
-  
-  
-          PushNotification.cancelAllLocalNotifications()
-          console.log("CANCELLED ")
-      }
-   */
+    const notifynow = () => {
+
+
+
+        PushNotification.localNotificationSchedule({
+            //... You can use all the options from localNotifications
+            message: name + " take this medicine now", // (required)
+            date: new Date(Date.UTC(year, month - 1, date, hour, minute) - 19800000),
+            repeatType: "day",
+            //repeatTime: (10 * 1000)
+
+        });
+        console.log(data);
+        console.log(Date.UTC(year, month - 1, date, hour, minute));
+        PushNotification.configure({
+            // (optional) Called when Token is generated (iOS and Android)
+            onRegister: function (token) {
+                console.log("TOKEN:", token);
+            },
+            onNotification: function (notification) {
+                console.log("NOTIFICATION:", notification);
+                // notification.finish(PushNotificationIOS.FetchResult.NoData);
+            },
+            permissions: {
+                alert: true,
+                badge: true,
+                sound: true,
+            },
+            popInitialNotification: true,
+            requestPermissions: true,
+        });
+    }
+
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#ffffff" }} >
@@ -239,7 +235,7 @@ const Tasks = ({ navigation }) => {
 
 
                     <TouchableOpacity style={styles.button}
-                        onPress={() => { updateData(); navigation.navigate("timetable") }}>
+                        onPress={() => { updateData(); notifynow(); navigation.navigate("timetable") }}>
                         <Text style={{ textAlign: "center", marginTop: 8, fontFamily: "Poppins-Regular", fontSize: 22 }}>
                             Update Remainder
                           </Text>

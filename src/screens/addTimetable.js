@@ -157,7 +157,7 @@ const Tasks = ({ navigation }) => {
 
         PushNotification.localNotificationSchedule({
             //... You can use all the options from localNotifications
-            message: name + "take this medicine", // (required)
+            message: name + " take this medicine now", // (required)
             date: new Date(Date.UTC(year, month - 1, date, hour, minute) - 19800000),
             repeatType: "day",
             //repeatTime: (10 * 1000)
