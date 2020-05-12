@@ -34,7 +34,7 @@ export default class first extends Component {
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <TouchableOpacity style={styles.card}
-                    onPress={()=>this.props.navigation.navigate('notify')}>
+                        onPress={() => this.props.navigation.navigate('timetable')}>
                         <Text style={{ fontSize: 18, color: '#8589c3', fontFamily: 'OpenSans-SemiBold', textAlign: 'center', marginTop: 5 }}>Timetable</Text>
                         <Image
                             style={styles.imagestyletimetable}
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#ffffff",
         alignItems: 'center',
-         },
+    },
     card: {
         backgroundColor: "#ffffff",
         width: 180,
