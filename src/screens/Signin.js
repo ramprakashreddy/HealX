@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import signup from './Signup'
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 
 export default class App extends Component {
   render() {
     return (
+      <ScrollView style={{flex: 1}}>
       <View style={styles.container}>
         <Text style={styles.healX}>HealX</Text>
         <Image style={{ width: 227, height: 222, marginTop: 16 }}
@@ -23,10 +25,12 @@ export default class App extends Component {
           style={styles.touch2}>
           <Text style={styles.signuptext}>Sign up</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={{ justifyContent: 'center' }}>
+        <TouchableOpacity style={{ justifyContent: 'center' }}
+        onPress={()=>this.props.navigation.navigate('pharmasignin')}>
           <Text style={styles.areYouAPharmacistClickHere}>Are you a pharmacist? Click here.</Text>
         </TouchableOpacity>
       </View>
+      </ScrollView>
     )
   }
 }
