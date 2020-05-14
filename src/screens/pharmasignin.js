@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity, Image,ScrollView } from 'react-native';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
 import font from './font';
 import auth from '@react-native-firebase/auth';
 import Store from './Store';
@@ -9,21 +9,21 @@ export default class pharmasignin extends Component {
         super(props);
         this.state = {
             showPassword: true,
-            username:'',
-            password:''
+            username: '',
+            password: ''
         }
         this.handleChangeText1 = this.handleChangeText1.bind(this)
         this.handleChangeText2 = this.handleChangeText2.bind(this)
     }
     handleChangeText1(newText) {
         this.setState({
-          username: newText
+            username: newText
         })
-      }
-      handleChangeText2(newText2) {
+    }
+    handleChangeText2(newText2) {
         this.setState({
-          password: newText2
-     
+            password: newText2
+
         })
       }
       signin(){
@@ -47,9 +47,8 @@ export default class pharmasignin extends Component {
       console.log('That email address is invalid!');
     }
 
-    //console.error(error);
-  });
-      }
+
+
 
     render() {
         return (
@@ -60,22 +59,22 @@ export default class pharmasignin extends Component {
                 </View>
                 <View style={{ flexDirection: "column", marginTop: 100, marginLeft: 20 }}>
                     <Text style={styles.inputFieldHeading}>E-mail</Text>
-                    <TextInput 
-                    autoCapitalize='none'
-                    defaultValue={this.state.username}
-                    onChangeText={this.handleChangeText1}
-                    style={styles.inputField} />
+                    <TextInput
+                        autoCapitalize='none'
+                        defaultValue={this.state.username}
+                        onChangeText={this.handleChangeText1}
+                        style={styles.inputField} />
                     <Text style={styles.inputFieldHeading}>Create Password</Text>
                     <TextInput
-                     autoCapitalize='none' secureTextEntry
-                     defaultValue={this.state.password}
-                     onChangeText={this.handleChangeText2}
+                        autoCapitalize='none' secureTextEntry
+                        defaultValue={this.state.password}
+                        onChangeText={this.handleChangeText2}
                         secureTextEntry={this.state.showPassword}
                         style={styles.inputField} />
 
                 </View>
                 <TouchableOpacity style={styles.button}
-                onPress={()=>this.signin()}>
+                    onPress={() => this.signin()}>
                     <Text style={{ textAlign: "center", marginTop: 5, fontFamily: "Poppins-Regular", fontSize: 22, color: "#f5faff" }}>
                         Sign in
                      </Text>
