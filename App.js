@@ -7,7 +7,6 @@ import Signup from './src/screens/Signup';
 import signupShop from './src/screens/signupShop';
 import signupShopDetails from './src/screens/signupShopDetails';
 import login from './src/screens/login';
-import first from './src/screens/first'
 import shopHome from './src/screens/shopHome'
 import first from './src/screens/first';
 import pharmadash from './src/screens/pharmadash';
