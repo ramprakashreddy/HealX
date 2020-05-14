@@ -9,6 +9,10 @@ import signupShopDetails from './src/screens/signupShopDetails';
 import login from './src/screens/login';
 import first from './src/screens/first'
 import shopHome from './src/screens/shopHome'
+import first from './src/screens/first';
+import pharmadash from './src/screens/pharmadash';
+import pharmastock from './src/screens/pharmastock';
+import phatmasignin from './src/screens/pharmasignin';
 import Forgotpassword from './src/screens/Forgotpassword';
 import chatBot from './src/screens/chatBot';
 import timetable from './src/screens/timetable';
@@ -31,9 +35,15 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='signupShop'>
+
+
+
+        <Stack.Navigator initialRouteName='pharmadash'>
           <Stack.Screen name='Signin' component={Signin} />
+          <Stack.Screen name='pharmastock' component={pharmastock} />
           <Stack.Screen name='Signup' component={Signup} />
+          <Stack.Screen name="pharmasignin" component={phatmasignin} />
+          <Stack.Screen name="pharmadash" component={pharmadash} />
           <Stack.Screen name='Login' component={login} />
           <Stack.Screen name='Forgotpassword' component={Forgotpassword} />
           <Stack.Screen options={{ headerShown: false }} name='first' component={first} />
