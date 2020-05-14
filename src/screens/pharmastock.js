@@ -12,21 +12,22 @@ function Users() {
     const subscriber = firestore()
       .collection('medicine').where('user','==','rag@gmail.com')
       .onSnapshot(querySnapshot => {
-        const users = [];
+        const medicine = [];
   
         querySnapshot.forEach(documentSnapshot => {
-          users.push({
+          medicine.push({
             ...documentSnapshot.data(),
             key: documentSnapshot.id,
           });
           
         });
   
-        setmedicine(users);
+        setmedicine(medicine);
         setLoading(false);
       });
       return () => subscriber();
         }, []);
+        console.log(medicine)
   if (loading) {
     return <ActivityIndicator />;
   }
@@ -43,4 +44,4 @@ function Users() {
     />
   );
 }
-export default React.memo(Users);
+export default (Users);
