@@ -23,7 +23,10 @@ export default class first extends Component {
                         />
                         <Text style={styles.cardcontentStock}>Check your current stock</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.card}>
+                    <TouchableOpacity style={styles.card}
+                        onPress={() => this.props.navigation.navigate('updateStock')}
+
+                    >
                         <Text style={styles.cardtitle}>Update Stock</Text>
                         <Image
                             style={styles.imagestyleUpdateStock}
@@ -43,17 +46,6 @@ export default class first extends Component {
 
                         />
                         <Text style={styles.cardcontentOrders}>Keep track of all your orders. </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.card}
-                        onPress={() => this.props.navigation.navigate('chatBot')}
-                    >
-                        <Text style={{ fontSize: 25, color: '#8589c3', fontFamily: 'OpenSans-SemiBold', textAlign: 'center', marginTop: 5 }}>Sale</Text>
-                        <Image
-                            style={styles.imagestyleshop}
-                            source={require('../images/shop.png')}
-
-                        />
-                        <Text style={styles.cardcontentSales}>Check your sales</Text>
                     </TouchableOpacity>
 
                 </View>

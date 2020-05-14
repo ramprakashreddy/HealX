@@ -10,6 +10,7 @@ import login from './src/screens/login';
 import shopHome from './src/screens/shopHome'
 import pharmadash from './src/screens/pharmadash';
 import pharmastock from './src/screens/pharmastock';
+import updateStock from './src/screens/updateStock';
 import phatmasignin from './src/screens/pharmasignin';
 import Forgotpassword from './src/screens/Forgotpassword';
 import chatBot from './src/screens/chatBot';
@@ -37,9 +38,10 @@ export default class App extends Component {
 
 
 
-        <Stack.Navigator initialRouteName='Signin'>
+        <Stack.Navigator initialRouteName='shopHome'>
           <Stack.Screen name='Signin' component={Signin} />
           <Stack.Screen name='pharmastock' component={pharmastock} />
+          <Stack.Screen name='updateStock' component={updateStock} />
           <Stack.Screen name='Signup' component={Signup} />
           <Stack.Screen name="pharmasignin" component={phatmasignin} />
           <Stack.Screen name="pharmadash" component={pharmadash} />
