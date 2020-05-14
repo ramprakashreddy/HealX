@@ -27,7 +27,7 @@ export default class pharmadash extends Component {
                         <Text style={styles.cardtitle}>Update Stock</Text>
                         <Image
                             style={styles.imagestyleshop}
-                            source={require('../images/updateStock.png')}
+                            source={require('../images/updatestock.png')}
 
                         />
                         <Text style={styles.cardcontentshop}>Manage and update your Stock here.</Text>

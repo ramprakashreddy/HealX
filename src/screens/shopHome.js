@@ -30,7 +30,7 @@ export default class first extends Component {
                         <Text style={styles.cardtitle}>Update Stock</Text>
                         <Image
                             style={styles.imagestyleUpdateStock}
-                            source={require('../images/updateStock.png')}
+                            source={require('../images/updatestock.png')}
 
                         />
                         <Text style={styles.cardcontentUpdateStock}>Manage and update your stock</Text>

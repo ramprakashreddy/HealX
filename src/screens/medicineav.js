@@ -4,14 +4,14 @@ import firestore from '@react-native-firebase/firestore';
 import { FlatList } from 'react-native-gesture-handler';
 import Store from './Store'
 
-function pharmaorder() {
+function medicineav({navigation}) {
   const [loading, setLoading] = useState(true); // Set loading to true on component mount
   const [medicine, setmedicine] = useState([]); // Initial empty array of users
 
 
   useEffect(() => {
     const subscriber = firestore()
-      .collection('orders').where('user','==', Store.userName)
+      .collection('medicine').where('name','==', Store.medname)
       .onSnapshot(querySnapshot => {
         const medicine = [];
   
@@ -34,31 +34,50 @@ function pharmaorder() {
   }
 
   return (
+      <View style={{flex:1}}>
     <FlatList
       data={medicine}
       renderItem={({ item }) => (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <TouchableOpacity style={styles.card}>
-            <Text style={styles.cardHeading}>{item.name}</Text>
+            <Text style={styles.cardHeading}>{item.user}</Text>
             <View style={{ flexDirection: "row" }}>
-              <Text style={styles.cardContent}>Quantity:</Text>
-              <Text style={{ fontSize: 16, marginLeft: 10, color: "#385882", fontFamily: "Poppins-Regular", marginTop: 22 }}>{item.quantity} Boxes</Text>
-            </View>
-            <View style={{ flexDirection: "row" }}>
+              <Text style={styles.cardContent}>stock:</Text>
+              
+            {item.stock === 0 ?  <Text style={{ fontSize: 16, marginLeft: 10, color: "#385882", fontFamily: "Poppins-Regular", marginTop: 22 }}>Out of Stock</Text>:
+               
+                
+                     <Text style={{ fontSize: 16, marginLeft: 10, color: "#385882", fontFamily: "Poppins-Regular", marginTop: 22 }}>In Stock</Text>}
+                
+
+              </View>
+            {/* <View style={{ flexDirection: "row" }}>
               <Text style={styles.cardContent}>Customer Name:</Text>
               <Text style={{ fontSize: 16, marginLeft: 10, color: "#385882", fontFamily: "Poppins-Regular", marginTop: 22 }}>{item.orderby}</Text>
             </View>
             <View style={{ flexDirection: "row" }}>
               <Text style={styles.cardContent}>Address:</Text>
               <Text style={{ fontSize: 16, marginLeft: 10, color: "#385882", fontFamily: "Poppins-Regular", marginTop: 22 }}>{item.address}</Text>
-            </View>
+            </View> */}
           </TouchableOpacity>
         </View>
       )}
+    
     />
+    <View>
+                <TouchableOpacity
+                    style={styles.FloatingButtonStyle}
+                    onPress={() => navigation.navigate('search')}
+                >
+                    <Text style={{ color: '#ffffff', alignSelf: "center", fontSize: 50 }}>+</Text>
+                </TouchableOpacity>
+            </View>
+            </View>
+    
+    
   );
 }
-export default (pharmaorder);
+export default (medicineav);
 
  
 const styles = StyleSheet.create({
@@ -73,6 +92,13 @@ const styles = StyleSheet.create({
     borderRadius: 10
  
   },
+  FloatingButtonStyle: {
+    width: 70,
+    height: 70,
+    backgroundColor: "#8589c3",
+    alignSelf: "center",
+    borderRadius: 100
+},
   cardHeading: {
     color: "#4c859b",
     fontFamily: "OpenSans-SemiBold",
@@ -91,4 +117,3 @@ const styles = StyleSheet.create({
  
  
 });
-

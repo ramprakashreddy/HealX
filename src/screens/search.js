@@ -7,47 +7,37 @@ import Store from './Store';
 
 
 
-export default class Signup extends Component {
+export default class search extends Component {
 
-    
- clicked(){
-firestore()
-  .collection('medicine')
-  .add({
-    name: this.state.medicineName,
-    stock: this.state.quantity,
-    user: Store.userName
-  })
-  .then(() => {
-    console.log('User added!');
-    this.props.navigation.navigate('pharmastock');
-  });
+clicked(){
+    Store.medname = this.state.med;
+    console.log(Store.medname);
+    this.props.navigation.navigate('medicineav') 
 }
-
 
     constructor() {
         super()
         this.state = {
-            medicineName: '',
-            quantity: '',
+            med: '',
+           // quantity: '',
 
         }
         this.handleChangeText1 = this.handleChangeText1.bind(this)
-        this.handleChangeText2 = this.handleChangeText2.bind(this)
+        //this.handleChangeText2 = this.handleChangeText2.bind(this)
 
 
     }
     handleChangeText1(newText) {
         this.setState({
-            medicineName: newText
+            med: newText
         })
     }
-    handleChangeText2(newText2) {
-        this.setState({
-            quantity: newText2
+    // handleChangeText2(newText2) {
+    //     this.setState({
+    //         quantity: newText2
 
-        })
-    }
+    //     })
+    // }
 
     render() {
 
@@ -59,21 +49,21 @@ firestore()
 
                     <Text style={styles.inputFieldHeading}>Medicine Name</Text>
                     <TextInput autoCapitalize='none'
-                        defaultValue={this.state.medicineName}
+                        defaultValue={this.state.med}
                         onChangeText={this.handleChangeText1}
                         style={styles.inputField} />
-                    <Text style={styles.inputFieldHeading}>Quantity</Text>
-                    <TextInput autoCapitalize='none'
+                    {/* <Text style={styles.inputFieldHeading}>Search</Text> */}
+                    {/* <TextInput autoCapitalize='none'
                         defaultValue={this.state.quantity}
                         onChangeText={this.handleChangeText2}
-                        style={styles.inputField} />
+        style={styles.inputField} />*/}
 
 
-                </View>
+                </View> 
                 <TouchableOpacity style={styles.button}
-                    onPress={() => { this.clicked() }}>
+                    onPress={() => { this.clicked()}}>
                     <Text style={{ textAlign: "center", marginTop: 6, fontFamily: "Poppins-Regular", fontSize: 22 }}>
-                        UPDATE STOCK
+                        Search
         </Text>
                 </TouchableOpacity>
             </ScrollView>

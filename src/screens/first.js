@@ -13,7 +13,8 @@ export default class first extends Component {
                     HealX
                 </Text>
                 <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity style={styles.card}>
+                    <TouchableOpacity style={styles.card}
+                    onPress={()=>this.props.navigation.navigate('medicineav')}>
                         <Text style={styles.cardtitle}>Medicine Availablity</Text>
                         <Image
                             style={styles.imagestylemedicine}

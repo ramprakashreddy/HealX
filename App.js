@@ -21,6 +21,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import pharmaorder from './src/screens/pharmaorder';
 import first from './src/screens/first'
+import medicineav from './src/screens/medicineav';
+import search from './src/screens/search';
 const Stack = createStackNavigator();
 
 export default class App extends Component {
@@ -38,10 +40,12 @@ export default class App extends Component {
 
 
 
-        <Stack.Navigator initialRouteName='shopHome'>
+        <Stack.Navigator initialRouteName='Signin'>
           <Stack.Screen name='Signin' component={Signin} />
           <Stack.Screen name='pharmastock' component={pharmastock} />
+          <Stack.Screen name='search' component={search}/>
           <Stack.Screen name='updateStock' component={updateStock} />
+          <Stack.Screen name='medicineav' component={medicineav}/>
           <Stack.Screen name='Signup' component={Signup} />
           <Stack.Screen name="pharmasignin" component={phatmasignin} />
           <Stack.Screen name="pharmadash" component={pharmadash} />
