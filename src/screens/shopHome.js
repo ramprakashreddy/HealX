@@ -14,7 +14,7 @@ export default class first extends Component {
                 </Text>
                 <View style={{ flexDirection: 'row', marginRight: 10 }}>
                     <TouchableOpacity style={styles.card}
-                    onPress={()=>this.props.navigation.navigate('pharmastock')}>
+                        onPress={() => this.props.navigation.navigate('pharmastock')}>
                         <Text style={styles.cardtitle}>My Stock</Text>
                         <Image
                             style={styles.imagestyleStock}
@@ -27,7 +27,7 @@ export default class first extends Component {
                         <Text style={styles.cardtitle}>Update Stock</Text>
                         <Image
                             style={styles.imagestyleUpdateStock}
-                            source={require('../images/updatestock.png')}
+                            source={require('../images/updateStock.png')}
 
                         />
                         <Text style={styles.cardcontentUpdateStock}>Manage and update your stock</Text>

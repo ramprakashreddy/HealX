@@ -8,28 +8,28 @@ import { ScrollView } from 'react-native-gesture-handler';
 export default class App extends Component {
   render() {
     return (
-      <ScrollView style={{flex: 1}}>
-      <View style={styles.container}>
-        <Text style={styles.healX}>HealX</Text>
-        <Image style={{ width: 227, height: 222, marginTop: 16 }}
-          source={require('../images/hlogo.png')}></Image>
-        <TouchableOpacity
-          onPress={() =>
-            this.props.navigation.navigate('Login')}
-          style={styles.touch1}>
-          <Text style={styles.signtext}>Sign in</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() =>
-          this.props.navigation.navigate('Signup')
-        }
-          style={styles.touch2}>
-          <Text style={styles.signuptext}>Sign up</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={{ justifyContent: 'center' }}
-        onPress={()=>this.props.navigation.navigate('pharmasignin')}>
-          <Text style={styles.areYouAPharmacistClickHere}>Are you a pharmacist? Click here.</Text>
-        </TouchableOpacity>
-      </View>
+      <ScrollView style={{ flex: 1, backgroundColor: "#ffffff" }}>
+        <View style={styles.container}>
+          <Text style={styles.healX}>HealX</Text>
+          <Image style={{ width: 227, height: 222, marginTop: 16 }}
+            source={require('../images/hlogo.png')}></Image>
+          <TouchableOpacity
+            onPress={() =>
+              this.props.navigation.navigate('Login')}
+            style={styles.touch1}>
+            <Text style={styles.signtext}>Sign in</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() =>
+            this.props.navigation.navigate('Signup')
+          }
+            style={styles.touch2}>
+            <Text style={styles.signuptext}>Sign up</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ justifyContent: 'center' }}
+            onPress={() => this.props.navigation.navigate('pharmasignin')}>
+            <Text style={styles.areYouAPharmacistClickHere}>Are you a pharmacist? Click here.</Text>
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     )
   }
