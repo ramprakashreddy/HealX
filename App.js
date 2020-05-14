@@ -9,7 +9,6 @@ import signupShopDetails from './src/screens/signupShopDetails';
 import login from './src/screens/login';
 import first from './src/screens/first'
 import shopHome from './src/screens/shopHome'
-import first from './src/screens/first';
 import pharmadash from './src/screens/pharmadash';
 import pharmastock from './src/screens/pharmastock';
 import phatmasignin from './src/screens/pharmasignin';
@@ -20,6 +19,7 @@ import addTimetable from './src/screens/addTimetable';
 import editTimetable from './src/screens/editTimetable';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import pharmaorder from './src/screens/pharmaorder';
 
 const Stack = createStackNavigator();
 
@@ -38,12 +38,13 @@ export default class App extends Component {
 
 
 
-        <Stack.Navigator initialRouteName='pharmadash'>
+        <Stack.Navigator initialRouteName='pharmaorder'>
           <Stack.Screen name='Signin' component={Signin} />
           <Stack.Screen name='pharmastock' component={pharmastock} />
           <Stack.Screen name='Signup' component={Signup} />
           <Stack.Screen name="pharmasignin" component={phatmasignin} />
           <Stack.Screen name="pharmadash" component={pharmadash} />
+          <Stack.Screen name="pharmaorder" component={pharmaorder}/>
           <Stack.Screen name='Login' component={login} />
           <Stack.Screen name='Forgotpassword' component={Forgotpassword} />
           <Stack.Screen options={{ headerShown: false }} name='first' component={first} />

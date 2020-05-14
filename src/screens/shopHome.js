@@ -13,7 +13,8 @@ export default class first extends Component {
                     HealX
                 </Text>
                 <View style={{ flexDirection: 'row', marginRight: 10 }}>
-                    <TouchableOpacity style={styles.card}>
+                    <TouchableOpacity style={styles.card}
+                    onPress={()=>this.props.navigation.navigate('pharmastock')}>
                         <Text style={styles.cardtitle}>My Stock</Text>
                         <Image
                             style={styles.imagestyleStock}
@@ -34,7 +35,7 @@ export default class first extends Component {
                 </View>
                 <View style={{ flexDirection: 'row', marginRight: 10 }}>
                     <TouchableOpacity style={styles.card}
-                        onPress={() => this.props.navigation.navigate('timetable')}>
+                        onPress={() => this.props.navigation.navigate('pharmaorder')}>
                         <Text style={{ fontSize: 24, color: '#8589c3', fontFamily: 'OpenSans-SemiBold', textAlign: 'center', marginTop: 5 }}>Orders</Text>
                         <Image
                             style={styles.imagestyleOrders}
