@@ -4,8 +4,11 @@ import SplashScreen from 'react-native-splash-screen';
 import Signin from './src/screens/Signin';
 import { View } from 'react-native';
 import Signup from './src/screens/Signup';
+import signupShop from './src/screens/signupShop';
+import signupShopDetails from './src/screens/signupShopDetails';
 import login from './src/screens/login';
 import first from './src/screens/first'
+import shopHome from './src/screens/shopHome'
 import Forgotpassword from './src/screens/Forgotpassword';
 import chatBot from './src/screens/chatBot';
 import timetable from './src/screens/timetable';
@@ -28,7 +31,7 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Signin'>
+        <Stack.Navigator initialRouteName='signupShop'>
           <Stack.Screen name='Signin' component={Signin} />
           <Stack.Screen name='Signup' component={Signup} />
           <Stack.Screen name='Login' component={login} />
@@ -38,6 +41,9 @@ export default class App extends Component {
           <Stack.Screen options={{ headerShown: false }} name='timetable' component={timetable} />
           <Stack.Screen name='addTimetable' component={addTimetable} />
           <Stack.Screen name='editTimetable' component={editTimetable} />
+          <Stack.Screen name='shopHome' options={{ headerShown: false }} component={shopHome} />
+          <Stack.Screen name='signupShop' options={{ headerShown: false }} component={signupShop} />
+          <Stack.Screen name='signupShopDetails' options={{ headerShown: false }} component={signupShopDetails} />
         </Stack.Navigator>
       </NavigationContainer >
     )
