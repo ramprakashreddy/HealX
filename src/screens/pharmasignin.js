@@ -33,7 +33,7 @@ export default class pharmasignin extends Component {
             .signInWithEmailAndPassword(this.state.username, this.state.password)
             .then(() => {
                 console.log('User account created & signed in!');
-                this.props.navigation.navigate('pharmadash')
+                this.props.navigation.navigate('shopHome')
             })
             .catch(error => {
                 //if (error.code === 'auth/email-already-in-use') {
