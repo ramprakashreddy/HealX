@@ -4,14 +4,14 @@ import firestore from '@react-native-firebase/firestore';
 import { FlatList } from 'react-native-gesture-handler';
 import Store from './Store'
 
-function Users() {
+function pharmaorder() {
   const [loading, setLoading] = useState(true); // Set loading to true on component mount
   const [medicine, setmedicine] = useState([]); // Initial empty array of users
 
 
   useEffect(() => {
     const subscriber = firestore()
-      .collection('medicine').where('user','==', Store.userName)
+      .collection('orders').where('user','==', Store.userName)
       .onSnapshot(querySnapshot => {
         const medicine = [];
   
@@ -42,23 +42,25 @@ function Users() {
             <Text style={styles.cardHeading}>{item.name}</Text>
             <View style={{ flexDirection: "row" }}>
               <Text style={styles.cardContent}>Quantity:</Text>
-              <Text style={{ fontSize: 16, marginLeft: 10, color: "#385882", fontFamily: "Poppins-Regular", marginTop: 22 }}>{item.stock} Tablets</Text>
+              <Text style={{ fontSize: 16, marginLeft: 10, color: "#385882", fontFamily: "Poppins-Regular", marginTop: 22 }}>{item.quantity} Boxes</Text>
             </View>
- 
+            <Text style={{ fontSize: 16, marginLeft: 10, color: "#385882", fontFamily: "Poppins-Regular", marginTop: 22 }}>{item.orderby}</Text>
+              <Text style={{ fontSize: 16, marginLeft: 10, color: "#385882", fontFamily: "Poppins-Regular", marginTop: 22 }}>{item.address}</Text>
           </TouchableOpacity>
         </View>
       )}
     />
   );
 }
-export default (Users);
+export default (pharmaorder);
+
  
 const styles = StyleSheet.create({
  
   card: {
     backgroundColor: "#ffffff",
     width: 368,
-    height: 140,
+    height: 200,
     marginLeft: 2,
     marginTop: 20,
     elevation: 15,
@@ -83,5 +85,4 @@ const styles = StyleSheet.create({
  
  
 });
-
 

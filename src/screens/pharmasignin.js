@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
 import font from './font';
 import auth from '@react-native-firebase/auth';
-
+import Store from './Store';
 
 export default class pharmasignin extends Component {
     constructor(props) {
@@ -25,28 +25,26 @@ export default class pharmasignin extends Component {
             password: newText2
 
         })
-    }
-    signin() {
-        console.log(this.state.password)
-        console.log(this.state.username)
-        auth()
-            .signInWithEmailAndPassword(this.state.username, this.state.password)
-            .then(() => {
-                console.log('User account created & signed in!');
-                this.props.navigation.navigate('shopHome')
-            })
-            .catch(error => {
-                //if (error.code === 'auth/email-already-in-use') {
-                console.log(error.code);
-                alert(error.code)
-                //}
+      }
+      signin(){
+          console.log(this.state.password)
+          console.log(this.state.username)
+          auth()
+  .signInWithEmailAndPassword(this.state.username, this.state.password)
+  .then(() => {
+    console.log('User account created & signed in!');
+    Store.userName = this.state.username;
+    console.log(Store.userName);
+    this.props.navigation.navigate('shopHome')
+  })
+  .catch(error => {
+    //if (error.code === 'auth/email-already-in-use') {
+      console.log(error.code);
+      alert(error.code)
+    //}
 
-                if (error.code === 'auth/invalid-email') {
-                    console.log('That email address is invalid!');
-                }
-
-                //console.error(error);
-            });
+    if (error.code === 'auth/invalid-email') {
+      console.log('That email address is invalid!');
     }
 
 
