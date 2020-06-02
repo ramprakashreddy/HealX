@@ -58,4 +58,4 @@ buck-out/
 # CocoaPods
 /ios/Pods/
 /android/app/google-services.json
-/src/config/chatBotconfig.jssrc/config/chatBotconfig.js
+/src/config/chatBotconfig.js
