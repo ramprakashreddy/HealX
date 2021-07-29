@@ -7,7 +7,7 @@
 * Shop owners can manage their inventory and orders from the app.
 
 # Screenshots
-<div align="center" style="margin-top:28px">
+<div align="center" style="margin-top:25px">
 <img src="./src/images/1.png" width="40%" style="margin-right:25px;"/>
 <img src="./src/images/2.png" width="40%" style="margin-right:25px;"/>
 <img src="./src/images/3.png" width="40%" style="margin-right:25px; margin-top:25px"/>
